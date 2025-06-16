@@ -1,0 +1,75 @@
+[
+  {
+    "model": "menu.menu",
+    "pk": 1,
+    "fields": {
+      "name": "menu_menu"
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 1,
+    "fields": {
+      "menu": 1,
+      "title": "Главная",
+      "parent": null,
+      "named_url": "index",
+      "url": ""
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 2,
+    "fields": {
+      "menu": 1,
+      "title": "О нас",
+      "parent": null,
+      "named_url": "about",
+      "url": ""
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 3,
+    "fields": {
+      "menu": 1,
+      "title": "Контакты",
+      "parent": null,
+      "named_url": "contact",
+      "url": ""
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 4,
+    "fields": {
+      "menu": 1,
+      "title": "Команда",
+      "parent": 2,
+      "named_url": "",
+      "url": "/about/team/"
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 5,
+    "fields": {
+      "menu": 1,
+      "title": "История",
+      "parent": 2,
+      "named_url": "",
+      "url": "/about/history/"
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 6,
+    "fields": {
+      "menu": 1,
+      "title": "Карьера",
+      "parent": 4,
+      "named_url": "",
+      "url": "/about/team/careers/"
+    }
+  }
+]

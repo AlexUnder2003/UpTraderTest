@@ -1,0 +1,30 @@
+<ul class="nav flex-column">
+  {% for node in menu_items %}
+    <li class="nav-item">
+      <div class="d-flex justify-content-between align-items-center">
+        <a class="nav-link flex-grow-1 {% if node.is_active %}active{% endif %}"
+           href="{{ node.item.get_absolute_url }}">
+          {{ node.item.title }}
+        </a>
+
+        {% if node.children %}
+          <button class="btn btn-toggle"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse-{{ node.item.id }}"
+                  aria-expanded="{{ node.is_open|yesno:'true,false' }}"
+                  aria-controls="collapse-{{ node.item.id }}">
+            ▾
+          </button>
+        {% endif %}
+      </div>
+
+      {% if node.children %}
+        <div class="collapse {% if node.is_open %}show{% endif %} ms-3"
+             id="collapse-{{ node.item.id }}">
+          {% include "menu.html" with menu_items=node.children %}
+        </div>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
