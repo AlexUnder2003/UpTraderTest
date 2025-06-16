@@ -27,13 +27,11 @@ def draw_menu(context, menu_name):
         item_dict[item.id] = item
         tree[item.parent_id].append(item)
 
-        # Получаем URL пункта
         try:
             item_url = reverse(item.named_url) if item.named_url else item.url
         except NoReverseMatch:
             item_url = item.url
 
-        # Проверка точного совпадения с текущим URL
         if item_url == request.path and active_item is None:
             active_item = item
 
